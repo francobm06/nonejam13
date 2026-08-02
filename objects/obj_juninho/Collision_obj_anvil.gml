@@ -1,4 +1,7 @@
-if !instance_exists(obj_death) 
+if other.state == "fall"
 {
-	instance_create_layer(0,0,layer,obj_death);
+	if !instance_exists(obj_death) 
+	{
+		instance_create_layer(0,0,layer,obj_death);
+	}
 }

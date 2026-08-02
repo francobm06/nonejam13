@@ -1,0 +1,1 @@
+txt = "Nossa, tio. Mas você quase me deixou morrer também né";

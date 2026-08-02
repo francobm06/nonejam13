@@ -5,3 +5,7 @@ walksp = 3;
 
 xscale = 1;
 yscale = 1;
+draw_xscale = 1;
+draw_yscale = 1;
+
+strn = 5;

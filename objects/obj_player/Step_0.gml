@@ -59,18 +59,43 @@ if place_meeting(x,y+1,obj_solid) and !place_meeting(x,yprevious+1,obj_solid)
 	yscale = 0.75;
 }
 
-if hsp != 0 image_xscale = xscale * sign(hsp);
-image_yscale = yscale;
+if hsp != 0 draw_xscale = xscale * sign(hsp);
+draw_yscale = yscale;
 if !place_meeting(x,y+1,obj_solid) sprite_index = spr_player_jump;
 else
 {
-	if move == 0 sprite_index = spr_player;
+	if hsp*move == 0 sprite_index = spr_player;
 	else sprite_index = spr_player_run;
 }
 
 #endregion
 
+#region BATENDO NO JUNINHO
 
+if (distance_to_object(obj_juninho) < 12)
+{
+	if mouse_check_button_pressed(mb_left)
+	{
+		audio_play_sound(snd_hit,1,false,,,random_range(0.3,1.7));
+		distx = mouse_x-x;
+		disty = mouse_y-y;
+
+		hitx = clamp((distx-8)/(128-8),-1,1) * strn;
+		hity = clamp((disty-8)/(128-8),-1,1) * strn;
+		with(obj_juninho)
+		{
+			var f = dial[irandom(array_length(dial) - 1)];
+			scr_dialogue(f,id);
+			flash = 6;
+			xscale = random_range(1.5,2);
+			yscale = random_range(0.5,1);
+			hsp = other.hitx;
+			vsp = other.hity;
+		}
+	}
+}
+
+#endregion
 
 
 
