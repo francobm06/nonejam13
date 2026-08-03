@@ -8,12 +8,12 @@ key_jump	= keyboard_check_pressed(ord("Z")) || keyboard_check_pressed(vk_space);
 
 #region MOVIMENTO
 
+if instance_exists(camera) move_camera();
+
 if state == "free"
 {
 	move = (key_right - key_left);
 	hsp += move * 0.6;
-	if move == 0 hsp = lerp(hsp,0,0.4);
-	vsp += grv;
 	
 	if (place_meeting(x, y + 1, obj_solid)) and (key_jump)
 	{
@@ -52,10 +52,12 @@ if state == "free"
 }
 if state == "freeze"
 {
-	hsp = 0;
-	vsp = 0;
+	move = 0;
 	if !global.dialogue state = "free";
 }
+
+if move == 0 hsp = lerp(hsp,0,0.4);
+vsp += grv;
 
 
 hsp = clamp(hsp,-walksp,walksp);
@@ -104,9 +106,20 @@ if state != "freeze"
 	if !place_meeting(x,y+1,obj_solid) sprite_index = spr_player_jump;
 	else
 	{
-		if hsp*move == 0 sprite_index = spr_player;
-		else sprite_index = spr_player_run;
+		if hsp*move == 0 
+		{
+			sprite_index = spr_player;
+		}
+		else
+		{
+			sprite_index = spr_player_run;
+			if alarm[0] == -1 alarm[0] = 1;
+		}
 	}
+} 
+else 
+{
+	sprite_index = spr_player;
 }
 
 #endregion

@@ -5,7 +5,25 @@ function scr_texts()
 		case("1"):
 		{
 			ds_grid_add_text("Pô, Tio...",spr_juninho_portrait);
-			ds_grid_add_text("Mas aí você quase me deixou morrer...",spr_juninho_portrait);
+			ds_grid_add_text("Mas aí você quase me deixou morrer também né...",spr_juninho_portrait);
+			break;
+		}
+		case("2"):
+		{
+			ds_grid_add_text("Você deve estar se achando todo espertão, né?...",spr_juninho_portrait);
+			ds_grid_add_text("Fica quietinho aí.",spr_player_portrait);
+			break;
+		}
+		case("3"):
+		{
+			ds_grid_add_text("m",spr_juninho_portrait);
+			ds_grid_add_text("a",spr_player_portrait);
+			break;
+		}
+		case("4"):
+		{
+			ds_grid_add_text("Minha mãe falou que ",spr_juninho_portrait);
+			ds_grid_add_text("a",spr_player_portrait);
 			break;
 		}
 	}

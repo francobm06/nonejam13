@@ -24,6 +24,8 @@ if keyboard_check_pressed(ord("E")) || keyboard_check_pressed(vk_space)
 			global.dialogue = false;
 			// ação quando terminar o dialogo
 			if (room == Room1) scr_transition(0.1,0.1,Room2);
+			if (room == Room2) scr_transition(0.1,0.1,Room3);
+			if (room == Room3) scr_transition(0.1,0.1,Room4);
 		}
 	}
 }

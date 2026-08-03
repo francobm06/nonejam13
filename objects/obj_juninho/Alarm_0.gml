@@ -1,3 +1,4 @@
+randomise();
 var f = sent[irandom(array_length(sent) - 1)]
 scr_dialogue(f,id);
 

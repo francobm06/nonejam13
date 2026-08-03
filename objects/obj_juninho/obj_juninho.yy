@@ -15,7 +15,10 @@
     "name": "PLAYER",
     "path": "folders/Objects/PLAYER.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_entity",
+    "path": "objects/obj_entity/obj_entity.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
