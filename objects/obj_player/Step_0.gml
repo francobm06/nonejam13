@@ -8,19 +8,57 @@ key_jump	= keyboard_check_pressed(ord("Z")) || keyboard_check_pressed(vk_space);
 
 #region MOVIMENTO
 
-var move = (key_right - key_left);
-hsp += move * 0.6;
-hsp = clamp(hsp,-walksp,walksp);
-if move == 0 hsp = lerp(hsp,0,0.4);
-
-vsp += grv;
-
-if (place_meeting(x, y + 1, obj_solid)) and (key_jump)
+if state == "free"
 {
-	vsp = -6;
-	xscale = 0.75;
-	yscale = 1.25;
+	move = (key_right - key_left);
+	hsp += move * 0.6;
+	if move == 0 hsp = lerp(hsp,0,0.4);
+	vsp += grv;
+	
+	if (place_meeting(x, y + 1, obj_solid)) and (key_jump)
+	{
+		vsp = -6;
+		xscale = 0.75;
+		yscale = 1.25;
+	}
+	#region BATENDO NO JUNINHO
+
+	if (distance_to_object(obj_juninho) < 12)
+	{
+		if mouse_check_button_pressed(mb_left)
+		{
+			if (!audio_is_playing(snd_hit)) audio_play_sound(snd_hit,1,false,,,random_range(0.3,1.7));
+			distx = mouse_x-x;
+			disty = mouse_y-y;
+
+			hitx = clamp((distx-8)/(128-8),-1,1) * strn;
+			hity = clamp((disty-8)/(128-8),-1,1) * strn;
+			with(obj_juninho)
+			{
+				var f = dial[irandom(array_length(dial) - 1)];
+				scr_dialogue(f,id);
+				flash = 6;
+				xscale = random_range(1.5,2);
+				yscale = random_range(0.5,1);
+				hsp = other.hitx;
+				vsp = other.hity;
+			}
+		}
+	}
+
+	#endregion
+	
+	if global.dialogue state = "freeze";
 }
+if state == "freeze"
+{
+	hsp = 0;
+	vsp = 0;
+	if !global.dialogue state = "free";
+}
+
+
+hsp = clamp(hsp,-walksp,walksp);
 
 xscale = lerp(xscale,1,0.1);
 yscale = lerp(yscale,1,0.1);
@@ -53,51 +91,23 @@ y += vsp;
 
 #region ANIMACAO
 
-if place_meeting(x,y+1,obj_solid) and !place_meeting(x,yprevious+1,obj_solid)
+if state != "freeze"
 {
-	xscale = 1.25;
-	yscale = 0.75;
-}
-
-if hsp != 0 draw_xscale = xscale * sign(hsp);
-draw_yscale = yscale;
-if !place_meeting(x,y+1,obj_solid) sprite_index = spr_player_jump;
-else
-{
-	if hsp*move == 0 sprite_index = spr_player;
-	else sprite_index = spr_player_run;
-}
-
-#endregion
-
-#region BATENDO NO JUNINHO
-
-if (distance_to_object(obj_juninho) < 12)
-{
-	if mouse_check_button_pressed(mb_left)
+	if place_meeting(x,y+1,obj_solid) and !place_meeting(x,yprevious+1,obj_solid)
 	{
-		audio_play_sound(snd_hit,1,false,,,random_range(0.3,1.7));
-		distx = mouse_x-x;
-		disty = mouse_y-y;
+		xscale = 1.25;
+		yscale = 0.75;
+	}
 
-		hitx = clamp((distx-8)/(128-8),-1,1) * strn;
-		hity = clamp((disty-8)/(128-8),-1,1) * strn;
-		with(obj_juninho)
-		{
-			var f = dial[irandom(array_length(dial) - 1)];
-			scr_dialogue(f,id);
-			flash = 6;
-			xscale = random_range(1.5,2);
-			yscale = random_range(0.5,1);
-			hsp = other.hitx;
-			vsp = other.hity;
-		}
+	if hsp != 0 draw_xscale = xscale * sign(hsp);
+	draw_yscale = yscale;
+	if !place_meeting(x,y+1,obj_solid) sprite_index = spr_player_jump;
+	else
+	{
+		if hsp*move == 0 sprite_index = spr_player;
+		else sprite_index = spr_player_run;
 	}
 }
 
 #endregion
-
-
-
-
 

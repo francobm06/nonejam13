@@ -6,5 +6,5 @@ text_current = "";
 
 border = 10;
 length = string_length(text);
-w = 50 + border*2;
+w = max(50 + border*2,length*5+border*2);
 h = string_height(text);

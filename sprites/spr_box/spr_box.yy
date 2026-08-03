@@ -48,8 +48,8 @@
   },
   "origin": 0,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "META",
+    "path": "folders/Sprites/META.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
