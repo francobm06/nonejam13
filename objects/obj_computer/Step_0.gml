@@ -4,7 +4,7 @@ if state == "on"
 	if sprite_index != spr_computer_load
 	{
 		sprite_index = spr_computer_load;
-		alarm[0] = room_speed*2;
+		alarm[0] = room_speed*3.5;
 	}
 }
 if state == "talk"

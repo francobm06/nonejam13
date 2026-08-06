@@ -1,0 +1,1 @@
+if !audio_is_playing(snd_bgm2) audio_play_sound(snd_bgm2,1,true);

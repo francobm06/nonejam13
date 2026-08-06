@@ -28,10 +28,12 @@ if keyboard_check_pressed(ord("E")) || keyboard_check_pressed(vk_space)
 			instance_destroy();
 			global.dialogue = false;
 			// ação quando terminar o dialogo
+						if room == Room_intro3 scr_transition(0.1,0.1,Room1);
 			if (room == Room1) scr_transition(0.1,0.1,Room2);
 			if (room == Room2) scr_transition(0.1,0.1,Room3);
 			if (room == Room3) scr_transition(0.1,0.1,Room4);
 			if (room == Room4) scr_transition(0.1,0.1,Room5);
+			if (room == Room11) global.talk = true;
 			if global.narrator == 5
 			{
 				with(instance_create_layer(0,0,"Instances",obj_trigger))

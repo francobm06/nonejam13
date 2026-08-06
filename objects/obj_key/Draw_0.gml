@@ -5,7 +5,7 @@ draw_set_halign(fa_center);
 
 if place_meeting(x,y,obj_player) and state == "off"
 {
-	draw_text(x,ystart-32,"E para pegar");
+	draw_sprite(spr_key_e,0,x,ystart-24);
 	if keyboard_check_pressed(ord("E"))
 	{
 		state = "on";

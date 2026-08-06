@@ -4,14 +4,37 @@ function scr_texts()
 	{
 		case("intro1"):
 		{
+			ds_grid_add_text("Era mais um dia tranquilo...",spr_blank);
+			ds_grid_add_text("Os pássaros cantavam...",spr_blank);
+			ds_grid_add_text("A vida estava tão boa...",spr_blank);
+			ds_grid_add_text("...",spr_blank);
+			ds_grid_add_text("Até que de repente",spr_blank);
+			break;
+		}
+		case("intro2"):
+		{
 			ds_grid_add_text("Ei, Moço...",spr_mae_portrait);
 			ds_grid_add_text("Tudo bem?",spr_mae_portrait);
+			ds_grid_add_text("...",spr_player_portrait);
+			ds_grid_add_text("Nã-",spr_player_portrait);
+			ds_grid_add_text("Que bom!",spr_mae_portrait);
+			ds_grid_add_text("...",spr_mae_portrait);
+			ds_grid_add_text("Eu preciso da sua ajuda...",spr_mae_portrait);
+			ds_grid_add_text("Eu tenho que ir numa reunião importante...",spr_mae_portrait);
+			ds_grid_add_text("E preciso que você tome conta do meu filho, Júnior...",spr_mae_portrait);
 			ds_grid_add_text("Eae Tio",spr_juninho_portrait);
-			ds_grid_add_text("aaa a a",spr_mae_portrait);
+			ds_grid_add_text("Ele é um menino muito educado.",spr_mae_portrait);
+			ds_grid_add_text("Então pode ficar tranquilo.",spr_mae_portrait);
 			ds_grid_add_text("Só por favor, não deixe o juninho morrer",spr_mae_portrait);
 			ds_grid_add_text("Ei! Esse é o nome do jogo!",spr_blank);
+			ds_grid_add_text("?",spr_mae_portrait);
 			ds_grid_add_text("Quem foi que disse isso?",spr_mae_portrait);
 			ds_grid_add_text("Eu sei lá",spr_player_portrait);
+			ds_grid_add_text("...",spr_mae_portrait);
+			ds_grid_add_text("Enfim... Júnior, prometa que você vai se comportar.",spr_mae_portrait);
+			ds_grid_add_text("...",spr_juninho_portrait);
+			ds_grid_add_text("...Não...",spr_juninho_portrait);
+			ds_grid_add_text("...Esse vai ser um longo dia...",spr_player_portrait);
 			break;
 		}
 		case("1"):
@@ -125,6 +148,13 @@ function scr_texts()
 		{
 			ds_grid_add_text("...",spr_juninho_portrait);
 			ds_grid_add_text("Tio?",spr_juninho_portrait);
+			break;
+		}
+		case("8"):
+		{
+			ds_grid_add_text("Tio!",spr_juninho_portrait);
+			ds_grid_add_text("Você tá bem?",spr_juninho_portrait);
+			ds_grid_add_text("Não.",spr_player_portrait);
 			break;
 		}
 	}

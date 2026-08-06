@@ -13,7 +13,7 @@
   "duration": 0.444082,
   "parent": {
     "name": "KEYS",
-    "path": "folders/Sounds/KEYS.yy",
+    "path": "folders/Sounds/SFX/KEYS.yy",
   },
   "preload": false,
   "sampleRate": 44100,

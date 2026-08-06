@@ -5,7 +5,7 @@ draw_set_color(c_white);
 
 if !locked and !clicked and distance_to_object(obj_player) < 12
 {
-	draw_text(x,y-64,"E para entrar");
+	draw_sprite(spr_key_e,0,x,y-48);
 	if keyboard_check_pressed(ord("E"))
 	{
 		action();

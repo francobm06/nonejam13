@@ -21,6 +21,34 @@ if state == "free"
 		xscale = 0.75;
 		yscale = 1.25;
 	}
+	
+	#region BATENDO NA BOLINHA
+
+	if (distance_to_object(obj_ball) < 12)
+	{
+		if mouse_check_button_pressed(mb_left)
+		{
+			if (!audio_is_playing(snd_hit)) audio_play_sound(snd_hit,1,false,,,random_range(0.3,1.7));
+			distx = mouse_x-x;
+			disty = mouse_y-y;
+
+			hitx = clamp((distx-8)/(128-8),-1,1) * strn;
+			hity = clamp((disty-8)/(128-8),-1,1) * strn;
+			with(obj_ball)
+			{
+				index += 1
+				if index < array_length(dial) {scr_dialogue(dial[index],id);}
+				flash = 6;
+				xscale = random_range(1.5,2);
+				yscale = random_range(0.5,1);
+				hsp = other.hitx;
+				vsp = other.hity;
+			}
+		}
+	}
+
+	#endregion
+	
 	if global.dialogue state = "freeze";
 }
 if state == "freeze"
