@@ -10,14 +10,14 @@
   "bitRate": 128,
   "compression": 0,
   "conversionMode": 0,
-  "duration": 0.133313,
+  "duration": 0.192,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",
   },
   "preload": false,
   "sampleRate": 44100,
-  "soundFile": "snd_dialogue.wav",
+  "soundFile": "snd_dialogue.mp3",
   "type": 0,
-  "volume": 0.6,
+  "volume": 0.4,
 }

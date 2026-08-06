@@ -1,0 +1,1 @@
+y = obj_selector.y + 16;

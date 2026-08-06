@@ -13,10 +13,12 @@ if (start == true)
 	
 	draw_sprite_stretched(spr_box,0,xx+64,yy+guih,guiw-128,96); // frame
 	draw_set_color(c_black);
+	scr_draw_set_text(c_black,f_dialogue2,fa_left,fa_top);
 	draw_text_ext(xx+166,yy+8+guih,text,20,guiw-196-64-16); // texto
+	scr_draw_set_text();
 	draw_set_color(-1);
 	draw_sprite_ext(sprite,0,120,guih-52+guih,4,4,0,c_white,1); // foto
 	
 	draw_set_font(-1);
-	if (char == string_length(text_grid[# Infos.Text, page]))draw_sprite(spr_marker,0,guiw/2,yy+84);
+	if (char == string_length(text_grid[# Infos.Text, page])) draw_sprite(spr_marker,0,guiw/2,yy+84+guih);
 }

@@ -12,7 +12,7 @@ if place_meeting(x,y+vsp,obj_solid)
 	vsp = 0;
 	if state == "fall"
 	{
-		audio_play_sound(snd_anvil,1,false,,,random_range(1,1.04));
+		audio_play_sound(snd_anvil,1,false,,,random_range(0.9,1.1));
 		state = "ground";
 	}
 }

@@ -1,0 +1,1 @@
+audio_play_sound(snd_narrator,1,false,,,random_range(0.9,1.1));

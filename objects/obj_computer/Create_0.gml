@@ -1,0 +1,2 @@
+state = "off";
+talk = false;

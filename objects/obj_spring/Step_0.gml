@@ -7,6 +7,7 @@ if activated == 1
 		var _inst = instance_place(x,y,obj_entity);
 		if (instance_exists(_inst))
 		{
+			audio_play_sound(snd_ball,1,false,,,random_range(0.95,1.05));
 			with(_inst)
 			{
 				hsp = 12 * other.dirx;
