@@ -32,8 +32,8 @@ if state == "free"
 			distx = mouse_x-x;
 			disty = mouse_y-y;
 
-			hitx = clamp((distx-8)/(128-8),-1,1) * strn;
-			hity = clamp((disty-8)/(128-8),-1,1) * strn;
+			hitx = clamp((distx)/(128),-1,1) * strn;
+			hity = clamp((disty)/(128),-1,1) * strn;
 			with(obj_ball)
 			{
 				index += 1

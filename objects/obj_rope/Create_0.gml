@@ -2,5 +2,13 @@ state = "wait";
 vsp = 0;
 
 
-if place_meeting(x,y,obj_anvil) linked = true;
+linked = false;
+if place_meeting(x,y,obj_anvil) 
+{
+	linked = obj_anvil;
+}
+if place_meeting(x,y,obj_cage) 
+{
+	linked = obj_cage;
+}
 else linked = false;

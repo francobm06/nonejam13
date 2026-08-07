@@ -51,14 +51,19 @@ function scr_texts()
 		}
 		case("3"):
 		{
-			ds_grid_add_text("m",spr_juninho_portrait);
-			ds_grid_add_text("a",spr_player_portrait);
+			ds_grid_add_text("Você viu que eu consigo pegar a chave pra você?",spr_juninho_portrait);
+			ds_grid_add_text("Vi.",spr_player_portrait);
+			ds_grid_add_text("Não precisa fazer mais.",spr_player_portrait);
+			ds_grid_add_text("Poxa...",spr_juninho_portrait);
 			break;
 		}
 		case("4"):
 		{
-			ds_grid_add_text("aquin ao tem nada aaaa",spr_juninho_portrait);
-			ds_grid_add_text("a",spr_player_portrait);
+			ds_grid_add_text("Uau!",spr_juninho_portrait);
+			ds_grid_add_text("Que reação em cadeia incrível!",spr_juninho_portrait);
+			ds_grid_add_text("?",spr_player_portrait);
+			ds_grid_add_text("...",spr_juninho_portrait);
+			ds_grid_add_text("...Sei lá...",spr_juninho_portrait);
 			break;
 		}
 		case("5"):
@@ -155,6 +160,53 @@ function scr_texts()
 			ds_grid_add_text("Tio!",spr_juninho_portrait);
 			ds_grid_add_text("Você tá bem?",spr_juninho_portrait);
 			ds_grid_add_text("Não.",spr_player_portrait);
+			ds_grid_add_text("...",spr_juninho_portrait);
+			ds_grid_add_text("Ufa...",spr_juninho_portrait);
+			ds_grid_add_text("Nada fora do normal então.",spr_juninho_portrait);
+			ds_grid_add_text("...",spr_juninho_portrait);
+			ds_grid_add_text("...",spr_player_portrait);
+			ds_grid_add_text("...Quer que eu te tire daí?",spr_juninho_portrait);
+			ds_grid_add_text("Por favor.",spr_player_portrait);
+			ds_grid_add_text("Se você colocar essa grade no chão, eu acho que consigo sair.",spr_player_portrait);
+			break;
+		}
+		case("ending1"):
+		{
+			ds_grid_add_text("Tio!",spr_juninho_portrait);
+			ds_grid_add_text("...",spr_player_portrait);
+			ds_grid_add_text("O que aconteceu?",spr_player_portrait);
+			ds_grid_add_text("Eu tava dormindo?",spr_player_portrait);
+			ds_grid_add_text("...",spr_juninho_portrait);
+			ds_grid_add_text("...Então...",spr_juninho_portrait);
+			ds_grid_add_text("Eu acertei uma bolada na sua cabeça... Sem querer...",spr_juninho_portrait);
+			ds_grid_add_text("E você desmaiou por muuuuito tempo...",spr_juninho_portrait);
+			ds_grid_add_text("...",spr_juninho_portrait);
+			ds_grid_add_text("Mal ae...",spr_juninho_portrait);
+			break;
+		}
+		case("ending2"):
+		{
+			ds_grid_add_text("Então quer dizer que nada foi verdade?",spr_player_portrait);
+			ds_grid_add_text("...As aventuras, os desafios...",spr_player_portrait);
+			ds_grid_add_text("...",spr_player_portrait);
+			ds_grid_add_text("Foi tudo verdade.",spr_juninho_portrait);
+			ds_grid_add_text("Só que eu acertei uma bolada na sua cabeça depois.",spr_juninho_portrait);
+			ds_grid_add_text("Ah...",spr_player_portrait);
+			break;
+		}		
+		case("ending3"):
+		{
+			ds_grid_add_text("...",spr_juninho_portrait);
+			ds_grid_add_text("Enfim...",spr_juninho_portrait);
+			ds_grid_add_text("Minha mãe veio me buscar...",spr_juninho_portrait);
+			ds_grid_add_text("Então valeu aí...",spr_juninho_portrait);
+			ds_grid_add_text("...Seu zé mané...",spr_juninho_portrait);
+			break;
+		}
+		case("ending4"):
+		{
+			ds_grid_add_text("...Valeu aí...",spr_player_portrait);
+			ds_grid_add_text("Juninho...",spr_player_portrait);
 			break;
 		}
 	}

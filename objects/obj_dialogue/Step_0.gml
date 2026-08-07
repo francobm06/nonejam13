@@ -34,6 +34,37 @@ if keyboard_check_pressed(ord("E")) || keyboard_check_pressed(vk_space)
 			if (room == Room3) scr_transition(0.1,0.1,Room4);
 			if (room == Room4) scr_transition(0.1,0.1,Room5);
 			if (room == Room11) global.talk = true;
+			if (room == Room8) if !audio_is_playing(snd_bgm4) audio_play_sound(snd_bgm4,1,true);
+			if npc_name = "ending1" 
+			{
+				with(instance_create_layer(0,0,"Instances",obj_trigger))
+				{
+					alarm[0] = room_speed*2;
+					action = function()
+					{
+						with(instance_create_layer(0,0,"Dialogue",obj_dialogue))
+						{
+							npc_name = "ending2";
+						}
+					}
+				}
+			}
+			if npc_name = "ending2" 
+			{
+				with(instance_create_layer(0,0,"Instances",obj_trigger))
+				{
+					alarm[0] = room_speed*1;
+					action = function()
+					{
+						with(instance_create_layer(0,0,"Dialogue",obj_dialogue))
+						{
+							npc_name = "ending3";
+						}
+					}
+				}
+			}
+			if npc_name = "ending3" room_goto(Room_ending2);
+			if npc_name = "ending4" room_goto(Room_ending3);
 			if global.narrator == 5
 			{
 				with(instance_create_layer(0,0,"Instances",obj_trigger))

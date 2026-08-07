@@ -8,5 +8,5 @@ draw_yscale = 1;
 xscale = 1;
 yscale = 1;
 
-dial = ["Você é muito chato.","Ei!","Ai!","Para!"]
+dial = ["Ai!","Ei!","Para!"]
 index = -1;

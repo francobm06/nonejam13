@@ -1,0 +1,1 @@
+if audio_is_playing(snd_bgm3) audio_stop_sound(snd_bgm3);

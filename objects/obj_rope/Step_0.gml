@@ -1,4 +1,5 @@
-if linked y = obj_anvil.y;
+if linked != false y = linked.y;
+if linked == obj_cage x = obj_cage.x;
 else
 {
 	if state = "fall" 

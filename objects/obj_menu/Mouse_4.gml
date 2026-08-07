@@ -5,7 +5,7 @@ switch(type)
 {
 	case(0):
 	{
-		//if (audio_is_playing(snd_music1)) audio_stop_sound(snd_music1);
+		if (audio_is_playing(snd_bgm3)) audio_stop_sound(snd_bgm3);
 		scr_transition(0.05,0.007,Room_intro,room_speed+room_speed/2);
 		with(obj_rope_follow) state = "fall";
 		with(obj_rope) state = "fall";
