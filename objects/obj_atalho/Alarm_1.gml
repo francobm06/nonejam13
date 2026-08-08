@@ -1,0 +1,1 @@
+if !instance_exists(obj_skip) instance_create_layer(room_width-64,room_height-96,"Instances",obj_skip);

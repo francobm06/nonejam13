@@ -68,7 +68,11 @@ if shortcut == true
 {
 	atalho = []
 	index += 1;
-	if index < array_length(lista_atalhos) atalho_alvo = lista_atalhos[index];
+	if index < array_length(lista_atalhos) 
+	{
+		atalho_alvo = lista_atalhos[index];
+		alarm[1] = 18 * room_speed;
+	}
 	else
 	{
 		instance_create_layer(0,0,"Instances",obj_na_transition);
